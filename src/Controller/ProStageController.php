@@ -17,4 +17,22 @@ class ProStageController extends AbstractController
             'controller_name' => 'Contrôleur ProStage',
         ]);
     }
+    /**
+     * @Route("/recherche", name="prostage_recherche")
+     */
+    public function recherche(): Response
+    {
+        return $this->render('pro_stage/recherche.html.twig', [
+            'controller_name' => 'Contrôleur ProStage',
+        ]);
+    }
+    /**
+     * @Route("/select", name="prostage_select")
+     */
+    public function select(): Response
+    {
+        return $this->render('pro_stage/select.html.twig', [
+            'controller_name' => 'Contrôleur ProStage',
+        ]);
+    }
 }
