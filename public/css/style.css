@@ -1,0 +1,55 @@
+html{
+  background-color: #ddd9d9;
+}
+.cadreTitre{
+border-radius: 88px;
+position: absolute;
+top: 20%;
+left: 50%;
+transform: translate(-50%,-50%);/*Sur X et sur Y*/
+background: #ddd9d9;
+box-shadow: inset -18px 18px 18px #c0bdbd,
+            inset 18px -18px 18px #faf5f5;
+/* size */
+width: 50%; height: 100px;
+}
+.contenu{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);/*Sur X et sur Y*/
+  font-weight: bold;
+}
+.bouton{
+  border-radius: 50px;
+  background: linear-gradient(145deg, #ece8e8, #c7c3c3);
+  box-shadow:  20px 20px 60px #bcb8b8,
+               -20px -20px 60px #fefafa;
+             /* size */
+width: 10%;height: 10%;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);/*Sur X et sur Y*/
+}
+
+.bouton:hover{
+border-radius: 50px;
+background: linear-gradient(145deg, #c7c3c3, #ece8e8);
+box-shadow:  20px 20px 60px #bcb8b8,
+             -20px -20px 60px #fefafa;
+}
+.bouton .contenu a{text-decoration: none; color: black;}
+
+.cadreBB{
+  border-radius: 88px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);/*Sur X et sur Y*/
+  background: #ddd9d9;
+  box-shadow: inset -18px 18px 18px #c0bdbd,
+              inset 18px -18px 18px #faf5f5;
+  /* size */
+  width: 50%; height: 50%;
+}
