@@ -13,44 +13,37 @@
 {% block Boite %}
   <div class="cadreBB">
     <div class="contenu">
-      <table id="tableauDonnee">
-             <thead>
-                 <tr>
-                     <th>titre</th>
-                     <th>formations</th>
-                     <th>description</th>
-                     <th>nom ETP</th>
-                     <th>activité ETP</th>
-                     <th>adresse ETP</th>
-                     <th>email ETP</th>
-                 </tr>
-             </thead>
-             <tbody>
-                    <tr>
-                      <td>dsqdqs</td>
-                      <td>dsqdqs</td>
-                      <td>dsqdqs</td>
-                      <td>dsqdqs</td>
-                      <td>dsqdqs</td>
-                      <td>dsqdqs</td>
-                      <td>dsqdqs</td>
-                    </tr>
-             </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Titre</th>
+              <th scope="col">Formations</th>
+              <th scope="col">Description</th>
+              <th scope="col">Nom ETP</th>
+              <th scope="col">Activité ETP</th>
+              <th scope="col">Adresse ETP</th>
+              <th scope="col">Email ETP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Developpeur Web</td>
+              <td>Dut Informatique</td>
+              <td>Lorem</td>
+              <td>Safran</td>
+              <td>Aéraunotique</td>
+              <td>lorem</td>
+              <td>lorem</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 {% endblock %}
 
 {% block javascript%}
-$(document).ready(function() {
-    $('#example').DataTable( {
-        "language": {
-            "lengthMenu": "Display _MENU_ records per page",
-            "zeroRecords": "Nothing found - sorry",
-            "info": "Showing page _PAGE_ of _PAGES_",
-            "infoEmpty": "No records available",
-            "infoFiltered": "(filtered from _MAX_ total records)"
-        }
-    } );
-} );
 {% endblock %}
