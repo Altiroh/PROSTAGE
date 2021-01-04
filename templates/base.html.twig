@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Template de base pour le site ProStages">
+        <meta name="author" content="Ewen Blandin">
+        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('/css/style.css')}}"> <!-- CSS personnaliser pour surpasser Bootstrap-->
+
+         <!-- Titre de l'onglet -->
+        <title>{% block title %}PROSTAGE - {% endblock %}</title>
+
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- Tête de page -->
+            {% block header %}
+            <div class="row my-5" >
+                <div class="col-md-12">
+                    <div class="cadreTitre">
+                      <div class="contenu">
+                        ProStages
+                      </div>
+                    </div>
+                 </div>
+            </div>
+            {% endblock %}
+
+            <!-- BLOCK BOUTONS -->
+            {% block bouton %}
+
+            <div class="row my-3">
+                <div class="col-md-12">
+                    <!-- Par defaut c'est le bouton de retour car 2/3 pages l'utilisent -->
+                    {% block lienBouton %}
+                    <a href="javascript:history.back()"
+                    {% endblock %}
+                      <button type="button" class="boutonRetour">
+                          {% block labelBouton %}
+                                  Retour
+                              {% endblock %}
+                      </button>
+                    </a>
+                </div>
+            </div>
+
+            {% endblock %}
+
+             <!--  -->
+            {% block contenuG %}
+            <div class="row my-5">
+                <div class="col-md-12">
+
+                    <!-- Titre de la page -->
+                    {% block titleP %} {% endblock %}
+
+                    <!-- Contenue de la page -->
+                    {% block contenuP %} {% endblock %}
+
+                </div>
+            </div>
+
+            {% endblock %}
+
+             <!-- javascript fixe -->
+             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+             <script src="{{asset('/js/bootstrap.min.js')}}" ></script>
+
+             <!-- javascript additionnel-->
+            {% block javascripts %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

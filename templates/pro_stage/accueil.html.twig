@@ -1,49 +1,42 @@
-{% extends 'bigBox.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Prostage - Accuei{% endblock %}
+{% block title %}  PROSTAGE - Accueil {% endblock %}
 
-{% block TitleP %}
-  <div class="cadreTitre">
-    <div class="contenu">
-      <h1>Accueil</h1>
-    </div>
-  </div>
+
+{% block lienBouton %}
+<!-- Changement du bouton par défaut, on le fait devenir filtrer pour accéder à notre page de filtrage -->
+  <a href="filtrage"
 {% endblock %}
 
-{% block Boite %}
-  <div class="cadreBB">
-    <div class="contenu">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead class="table-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Titre</th>
-              <th scope="col">Formations</th>
-              <th scope="col">Description</th>
-              <th scope="col">Nom ETP</th>
-              <th scope="col">Activité ETP</th>
-              <th scope="col">Adresse ETP</th>
-              <th scope="col">Email ETP</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Developpeur Web</td>
-              <td>Dut Informatique</td>
-              <td>Lorem</td>
-              <td>Safran</td>
-              <td>Aéraunotique</td>
-              <td>lorem</td>
-              <td>lorem</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+{% block labelBouton %}
+  Filtrer
 {% endblock %}
 
-{% block javascript%}
+{% block contenuP %}
+<div class="cadreBB">
+  <table class="table">	<!-- Tableau des offres de stage -->
+  	<thead>
+  		<tr>
+  			<th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Formations</th>
+  	    <th scope="col">Nom etp</th>
+  	    <th scope="col">Activité etp</th>
+  	    <th scope="col">Adresse etp</th>
+  	    <th scope="col">Email etp</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  			{% for stage in 1..3 %}
+  			<tr>
+  				{% for i in 1..7 %}
+  		        	<td> <a href="/stage{{stage}}"> {{stage}} </a></td>
+  		        {% endfor %}
+  		     </tr>
+  		    {% endfor %}
+
+  	</tbody>
+  </table>
+</div>
+
 {% endblock %}

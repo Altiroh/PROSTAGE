@@ -1,20 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Prostage - {% endblock %}
+{% block title %} PROSTAGE -  Filtrer {% endblock %}
 
-{% block body %}
-<style>
-    .box { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    html {background-color: grey; color: white;}
-    h1,h2{text-align: center;}
-    .tableau {}
-</style>
 
-<div class="box">
-    <h1> ProStage ✅</h1>
-    <h2> - Selection - </h2>
-    <div class="tableau">
-        <tb> CONTENU DE LA PAGE : Résultat d'un contenu séléctionné </tb>
-    </div>
-</div>
+{% block contenuP %}
+
+	<div class="row cadreBB">
+		<!-- Tableau ('tab') contenant les types de filtrages -->
+		{% set tab = {1:'formation',2:'entreprise'} %}
+
+		{% for typeFiltrage in tab %}<!-- Parcours de tab -->
+
+			<div class="col-md-6 col-sm-12" style="border:1px solid black;"> <!-- encadre en noir -->
+
+				<h3> Par {{typeFiltrage}} </h3>		<!-- titre liste en fonction du type de filtrage -->
+
+				{% for itemListe in 1..10 %}
+					<!-- Affichage des elements de la liste de 1 à 10 -->
+		        	<li>{{ itemListe }}</li>
+				{% endfor %}
+      </div>
+		{% endfor %}
+	</div>
+
+
+
 {% endblock %}

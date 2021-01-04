@@ -10,40 +10,25 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProStageController extends AbstractController
 {
     /**
-     * @Route("/", name="prostage_start")
+     * @Route("/stage{idStage}", name="prostage_stage")
      */
-    public function start(): Response
+    public function stageSelect($idStage): Response
     {
-        return $this->render('pro_stage/start.html.twig', [
-            'controller_name' => 'Contrôleur ProStage',
-        ]);
-    }
-    /**
-     * @Route("/recherche", name="prostage_recherche")
-     */
-    public function recherche(): Response
-    {
-        return $this->render('pro_stage/recherche.html.twig', [
-            'controller_name' => 'Contrôleur ProStage',
-        ]);
+        return $this->render('pro_stage/stageSelect.html.twig',['idStage' => $idStage,]);
     }
     /**
      * @Route("/filtrage", name="prostage_filtrage")
      */
-    public function select(): Response
+    public function filtrage(): Response
     {
-        return $this->render('pro_stage/filtrage.html.twig', [
-            'controller_name' => 'Contrôleur ProStage',
-        ]);
+        return $this->render('pro_stage/filtrage.html.twig');
     }
     /**
-     * @Route("/accueil", name="prostage_accueil")
+     * @Route("/", name="prostage_accueil")
      */
     public function accueil(): Response
     {
-        return $this->render('pro_stage/accueil.html.twig', [
-            'controller_name' => 'Contrôleur ProStage',
-        ]);
+        return $this->render('pro_stage/accueil.html.twig');
     }
 
 }
