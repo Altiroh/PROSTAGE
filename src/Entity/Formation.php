@@ -25,7 +25,7 @@ class Formation
     private $Formation;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Stage::class, mappedBy="Formations")
+     * @ORM\ManyToMany(targetEntity=Stage::class, mappedBy="formation")
      */
     private $stages;
 
