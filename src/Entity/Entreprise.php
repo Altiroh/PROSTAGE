@@ -35,7 +35,7 @@ class Entreprise
     private $adresse;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Stage::class, mappedBy="entreprise")
+     * @ORM\OneToMany(targetEntity=Stage::class, mappedBy="entreprise", orphanRemoval=true)
      */
     private $stages;
 

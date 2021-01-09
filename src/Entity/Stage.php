@@ -25,7 +25,7 @@ class Stage
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 
@@ -35,15 +35,15 @@ class Stage
     private $email;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Entreprise::class, inversedBy="stages")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $entreprise;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Formation::class, inversedBy="stages")
      */
     private $formation;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Entreprise::class, inversedBy="stages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $entreprise;
 
     public function __construct()
     {
@@ -91,22 +91,10 @@ class Stage
         return $this;
     }
 
-    public function getEntreprise(): ?Entreprise
-    {
-        return $this->entreprise;
-    }
-
-    public function setEntreprise(?Entreprise $entreprise): self
-    {
-        $this->entreprise = $entreprise;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Formation[]
      */
-    public function getFormations(): Collection
+    public function getFormation(): Collection
     {
         return $this->formation;
     }
@@ -123,6 +111,18 @@ class Stage
     public function removeFormation(Formation $formation): self
     {
         $this->formation->removeElement($formation);
+
+        return $this;
+    }
+
+    public function getEntreprise(): ?Entreprise
+    {
+        return $this->entreprise;
+    }
+
+    public function setEntreprise(?Entreprise $entreprise): self
+    {
+        $this->entreprise = $entreprise;
 
         return $this;
     }
