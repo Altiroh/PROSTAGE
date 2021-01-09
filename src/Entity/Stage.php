@@ -43,11 +43,11 @@ class Stage
     /**
      * @ORM\ManyToMany(targetEntity=Formation::class, inversedBy="stages")
      */
-    private $Formations;
+    private $formation;
 
     public function __construct()
     {
-        $this->Formations = new ArrayCollection();
+        $this->formation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -108,13 +108,13 @@ class Stage
      */
     public function getFormations(): Collection
     {
-        return $this->Formations;
+        return $this->formation;
     }
 
     public function addFormation(Formation $formation): self
     {
-        if (!$this->Formations->contains($formation)) {
-            $this->Formations[] = $formation;
+        if (!$this->formation->contains($formation)) {
+            $this->formation[] = $formation;
         }
 
         return $this;
@@ -122,7 +122,7 @@ class Stage
 
     public function removeFormation(Formation $formation): self
     {
-        $this->Formations->removeElement($formation);
+        $this->formation->removeElement($formation);
 
         return $this;
     }
