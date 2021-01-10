@@ -7,11 +7,10 @@
         <meta name="description" content="Template de base pour le site ProStages">
         <meta name="author" content="Ewen Blandin">
         <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('/css/style.css')}}"> <!-- CSS personnaliser pour surpasser Bootstrap-->
-
-         <!-- Titre de l'onglet -->
+        <!-- CSS personnaliser pour surcharger Bootstrap-->
+        <link rel="stylesheet" href="{{asset('/css/style.css')}}"> 
+        <!-- Titre de l'onglet -->
         <title>{% block title %}PROSTAGE - {% endblock %}</title>
-
     </head>
     <body>
         <div class="container">
@@ -29,7 +28,7 @@
             </div>
             {% endblock %}
 
-            <!-- BLOCK BOUTONS -->
+            <!-- Interraction via bouton -->
             {% block bouton %}
 
             <div class="row my-3">
@@ -49,7 +48,7 @@
 
             {% endblock %}
 
-             <!--  -->
+             <!-- Contenu de la page -->
             {% block contenuG %}
             <div class="row my-5">
                 <div class="col-md-12">
