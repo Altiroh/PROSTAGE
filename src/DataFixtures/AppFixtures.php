@@ -14,31 +14,31 @@ class AppFixtures extends Fixture
     {
         //===Générateur de fausse donnée (En français)===
 
-        $faker = \Faker\Factory::create('fr_FR');
+          $faker = \Faker\Factory::create('fr_FR');
 
         //===ZONE Formation===
           //On créer d'abord les données de formation on aura besoin après.
 
           //en dur dans le code , car on a besoin de formations particulières.
-        $dutInf = new Formation();
-        $dutInf->setFormation("DUT Informatique");
+          $dutInf = new Formation();
+          $dutInf->setFormation("DUT Informatique");
 
-        $dutGim = new Formation();
-        $dutGim->setFormation("DUT Génie industriel et maintenance");
+          $dutGim = new Formation();
+          $dutGim->setFormation("DUT Génie industriel et maintenance");
 
-        $lpMdN = new Formation();
-        $lpMdN->setFormation("LP Métiers du Numérique");
+          $lpMdN = new Formation();
+          $lpMdN->setFormation("LP Métiers du Numérique");
 
-        $lpPA = new Formation();
-        $lpPA->setFormation("LP Programmation avancée");
+          $lpPA = new Formation();
+          $lpPA->setFormation("LP Programmation avancée");
 
-        /*On regroupe tout dans un tableau pour ne pas avoir à
-        dupliquer la fonction persist*/
-        $tabFormations = array($dutInf,$dutGim,$lpMdN,$lpPA);
-        foreach ($tabFormations as $formation)
-        {
+          /*On regroupe tout dans un tableau pour ne pas avoir à
+          dupliquer la fonction persist*/
+          $tabFormations = array($dutInf,$dutGim,$lpMdN,$lpPA);
+          foreach ($tabFormations as $formation)
+          {
             $manager->persist($formation);
-        }
+          }
 
         //===ZONE Entreprise====
           //Créer des activités d'entreprises
