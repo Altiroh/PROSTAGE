@@ -14,7 +14,13 @@ PROSTAGE - Stage n°{{idStage}}
 		<!-- Partie concernant l'offre de stage -->
 		<div class="col-md-8 col-sm-12"  style="margint-top:10%;">
       <div class="cadreBB">
-  			Formations <br>
+
+				{{stages.titre}}
+
+				{% for formationCourante in stages.Formation %}
+				{{formationCourante.Formation}}
+				{% if loop.last == false %} / {%endif%}
+				{% endfor %} <br>
 
   			Description <br> <br>
 
