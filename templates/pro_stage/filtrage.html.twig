@@ -6,21 +6,22 @@
 {% block contenuP %}
 
 	<div class="row cadreBB">
-		<!-- Tableau ('tab') contenant les types de filtrages -->
-		{% set tab = {1:'formation',2:'entreprise'} %}
-
-		{% for typeFiltrage in tab %}<!-- Parcours de tab -->
-
-			<div class="col-md-6 col-sm-12" style="border:1px solid black;"> <!-- encadre en noir -->
-
-				<h3> Par {{typeFiltrage}} </h3>		<!-- titre liste en fonction du type de filtrage -->
-
-				{% for itemListe in 1..10 %}
-					<!-- Affichage des elements de la liste de 1 à 10 -->
-		        	<li>{{ itemListe }}</li>
+				<div class="col-md-6 col-sm-12" style="border:1px solid black; padding:10px;">
+				<h3> Par Formation </h3>
+				<ul>
+				{% for formationCourante in formations %}
+					<li>{{formationCourante.Formation}}</li>
 				{% endfor %}
-      </div>
-		{% endfor %}
+				</ul>
+				</div><br>
+				<div class="col-md-6 col-sm-12" style="border:1px solid black; padding:10px;">
+				<h3> Par Entreprise </h3>
+				<ul>
+				{% for entrepriseCourante in entreprises %}
+					<li><a href=>{{entrepriseCourante.nom}}</li>
+				{% endfor %}
+				</ul>
+				</div>
 	</div>
 
 
