@@ -14,7 +14,11 @@ class ProStageController extends AbstractController
      */
     public function stageSelect($idStage): Response
     {
-        return $this->render('pro_stage/stageSelect.html.twig',['idStage' => $idStage,]);
+      //Récuperer le répertoire de l'entité stage
+      $repStage = $this->getDoctrine()->getRepository(Stage::class);
+      //Récuperer ce qui a été saved dans la BD
+      $stage = $repStage->find($idStage);
+      return $this->render('pro_stage/stageSelect.html.twig',['stage' => $stage]);
     }
     /**
      * @Route("/filtrage", name="prostage_filtrage")

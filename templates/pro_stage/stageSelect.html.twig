@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block titreP %}	<!-- titre de la page avec l'identifiant du stage en question -->
+{% block title %}
 
-PROSTAGE - Stage n°{{idStage}}
+PROSTAGE - n°{{stage.id}}
 
 {% endblock %}
 
@@ -15,23 +15,24 @@ PROSTAGE - Stage n°{{idStage}}
 		<div class="col-md-8 col-sm-12"  style="margint-top:10%;">
       <div class="cadreBB">
 
-				{{Stage.titre}}
+				<strong>{{stage.titre}}</strong>
 
-				{% for formationCourante in stages.Formation %}
+				<i>({% for formationCourante in stage.Formation %}
 				{{formationCourante.Formation}}
 				{% if loop.last == false %} / {%endif%}
-				{% endfor %} <br>
+				{% endfor %} )</i><br>
 
-  			{{Stage.description}} <br> <br>
+  			Description: <br> "{{stage.description}}" <br> <br>
       </div>
     </div>
 
     		<!-- Partie concernant les informations de l'entreprise -->
     <div class="col-md-4 col-sm-12" style="margint-top:10%;">
       <div class="cadreBB">
-    			Entreprise: <br>
-    			{{Stage.entreprise.nom}} <br>
-    			{{Stage.entreprise.adresse}} <br>
+    			<strong>{{stage.entreprise.nom}} </strong> <br>
+    			<i>{{stage.entreprise.adresse}} <br>
+						 {{stage.entreprise.activite}} </i><br>
+
       </div>
 		</div>
 	</div>
