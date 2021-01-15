@@ -10,7 +10,11 @@
 				<h3> Par Formation </h3>
 				<ul>
 				{% for formationCourante in formations %}
-					<li>{{formationCourante.Formation}}</li>
+					<li>
+						<a href="{{path('prostage_formSelect',{idForm:formationCourante.id})}}">
+							{{formationCourante.Formation}}
+						</a>
+					</li>
 				{% endfor %}
 				</ul>
 				</div><br>
@@ -18,7 +22,11 @@
 				<h3> Par Entreprise </h3>
 				<ul>
 				{% for entrepriseCourante in entreprises %}
-					<li><a href=>{{entrepriseCourante.nom}}</li>
+					<li>
+						<a href="{{path('prostage_etpSelect',{idEtp:entrepriseCourante.id})}}">
+							{{entrepriseCourante.nom}}
+						</a>
+					</li>
 				{% endfor %}
 				</ul>
 				</div>

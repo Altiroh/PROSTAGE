@@ -7,11 +7,12 @@
         <meta name="description" content="Template de base pour le site ProStages">
         <meta name="author" content="Ewen Blandin">
         <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('/css/style.css')}}"> <!-- CSS personnaliser pour surpasser Bootstrap-->
-
-         <!-- Titre de l'onglet -->
+        <!-- ALTERNATIVE ICONS BOOTSTRAP 3 -->
+        <script src="https://unpkg.com/feather-icons"></script>
+        <!-- CSS personnaliser pour surcharger Bootstrap-->
+        <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+        <!-- Titre de l'onglet -->
         <title>{% block title %}PROSTAGE - {% endblock %}</title>
-
     </head>
     <body>
         <div class="container">
@@ -22,14 +23,14 @@
                 <div class="col-md-12">
                     <div class="cadreTitre">
                       <div class="contenu">
-                        ProStages
+                        <i data-feather="book-open"></i> ProStages
                       </div>
                     </div>
                  </div>
             </div>
             {% endblock %}
 
-            <!-- BLOCK BOUTONS -->
+            <!-- Interraction via bouton -->
             {% block bouton %}
 
             <div class="row my-3">
@@ -44,12 +45,21 @@
                               {% endblock %}
                       </button>
                     </a>
+                    {% if filtre is defined %}
+                      <strong>{{filtre}}</strong>
+                      <a href="{{ path('prostage_accueil')}}">
+                        <button type="button" class="boutonRetour">
+                          <i data-feather="x"></i> Annuler
+                        </button>
+                      </a>
+                    {% endif %}
                 </div>
             </div>
 
             {% endblock %}
 
-             <!--  -->
+
+             <!-- Contenu de la page -->
             {% block contenuG %}
             <div class="row my-5">
                 <div class="col-md-12">
@@ -68,7 +78,7 @@
              <!-- javascript fixe -->
              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
              <script src="{{asset('/js/bootstrap.min.js')}}" ></script>
-
+             <script>  feather.replace()</script>
              <!-- javascript additionnel-->
             {% block javascripts %}
 

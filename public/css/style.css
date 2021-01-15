@@ -4,7 +4,7 @@ html{
 body{background-color: #ddd9d9;}
 a{color:grey;text-decoration: none;}
 a:hover{color:black;text-decoration: none;}
-
+strong{margin:20px;font-size: 25px;}
 
 .cadreTitre{
   border-radius: 88px;

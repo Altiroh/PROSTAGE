@@ -30,7 +30,7 @@
   	<tbody>
   			{% for stageCourant in stages %}
   			<tr>
-          <td> <a href="{{path('prostage_stage',{idStage:stageCourant.id})}}"> {{stageCourant.id}} </a></td>
+          <td> <a href="{{path('prostage_stage',{'idStage':stageCourant.id})}}"> {{stageCourant.id}} </a></td>
           <td> {{stageCourant.titre}} </td>
           <td> {{stageCourant.description}} </td>
           <td>
@@ -39,7 +39,8 @@
                {% if loop.last == false %} / {%endif%}
                {% endfor %}
           </td>
-          <td> {{stageCourant.entreprise.nom}} </td>
+          <td> <a href="{{ path('prostage_etpSelect', {'idEtp':stageCourant.entreprise.id} ) }}">
+          {{stageCourant.entreprise.nom}} </a> </td>
           <td> {{stageCourant.entreprise.activite}} </td>
           <td> {{stageCourant.entreprise.adresse}} </td>
           <td> {{stageCourant.email}} </td>
