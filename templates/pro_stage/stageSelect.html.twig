@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block titreP %}	<!-- titre de la page avec l'identifiant du stage en question -->
+{% block title %}
 
-PROSTAGE - Stage n°{{idStage}}
+PROSTAGE - n°{{stage.id}}
 
 {% endblock %}
 
@@ -14,20 +14,25 @@ PROSTAGE - Stage n°{{idStage}}
 		<!-- Partie concernant l'offre de stage -->
 		<div class="col-md-8 col-sm-12"  style="margint-top:10%;">
       <div class="cadreBB">
-  			Formations <br>
 
-  			Description <br> <br>
+				<strong>{{stage.titre}}</strong>
 
-  			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id maximus ipsum. Praesent eu orci et lorem aliquet auctor quis a mauris. Cras suscipit feugiat volutpat. Fusce ipsum lorem, volutpat vel nibh non, blandit convallis lorem. Suspendisse laoreet, mauris at laoreet dapibus, lorem nunc tristique nisl, quis suscipit quam libero sit amet lectus. Proin condimentum dapibus suscipit. Vivamus a nunc vitae mi accumsan posuere iaculis sed odio. Sed tincidunt viverra leo vitae ultricies. Quisque ut consectetur neque. Mauris vel tincidunt mauris, in pulvinar enim. Donec eu nisl vel enim maximus cursus. Vivamus imperdiet, eros ut varius ultrices, quam urna feugiat nulla, at varius nunc velit quis ex. Vivamus efficitur, elit vel consequat dignissim, quam leo convallis nisi, at convallis felis felis vitae orci. Sed posuere maximus turpis ac tempor. Suspendisse a risus ut leo feugiat fermentum ac ac ex.
-        </div>
-    		</div>
+				<i>({% for formationCourante in stage.Formation %}
+				{{formationCourante.Formation}}
+				{% if loop.last == false %} / {%endif%}
+				{% endfor %} )</i><br>
+
+  			Description: <br> "{{stage.description}}" <br> <br>
+      </div>
+    </div>
 
     		<!-- Partie concernant les informations de l'entreprise -->
-    		<div class="col-md-4 col-sm-12" style="margint-top:10%;">
-        <div class="cadreBB">
-    			Entreprise <br>
-    			nom <br>
-    			Adresse <br>
+    <div class="col-md-4 col-sm-12" style="margint-top:10%;">
+      <div class="cadreBB">
+    			<strong>{{stage.entreprise.nom}} </strong> <br>
+    			<i>{{stage.entreprise.adresse}} <br>
+						 {{stage.entreprise.activite}} </i><br>
+
       </div>
 		</div>
 	</div>

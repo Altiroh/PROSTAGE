@@ -17,6 +17,7 @@
   <table class="table">	<!-- Tableau des offres de stage -->
   	<thead>
   		<tr>
+        <th scope="col">Id</th>
   			<th scope="col">Titre</th>
         <th scope="col">Description</th>
         <th scope="col">Formations</th>
@@ -27,13 +28,24 @@
   		</tr>
   	</thead>
   	<tbody>
-  			{% for stage in 1..3 %} <!-- Création de fausse ligne de donnée -->
+  			{% for stageCourant in stages %}
   			<tr>
-  				{% for i in 1..7 %}
-  		        	<td> <a href="/stage{{stage}}"> {{stage}} </a></td>
-  		        {% endfor %}
-  		     </tr>
-  		    {% endfor %}
+          <td> <a href="{{path('prostage_stage',{'idStage':stageCourant.id})}}"> {{stageCourant.id}} </a></td>
+          <td> {{stageCourant.titre}} </td>
+          <td> {{stageCourant.description}} </td>
+          <td>
+               {% for formationCourante in stageCourant.Formation %}
+               {{formationCourante.Formation}}
+               {% if loop.last == false %} / {%endif%}
+               {% endfor %}
+          </td>
+          <td> <a href="{{ path('prostage_etpSelect', {'idEtp':stageCourant.entreprise.id} ) }}">
+          {{stageCourant.entreprise.nom}} </a> </td>
+          <td> {{stageCourant.entreprise.activite}} </td>
+          <td> {{stageCourant.entreprise.adresse}} </td>
+          <td> {{stageCourant.email}} </td>
+  		  </tr>
+  		  {% endfor %}
 
   	</tbody>
   </table>
