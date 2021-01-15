@@ -25,7 +25,9 @@ class Stage
     private $titre;
 
     /**
+
      * @ORM\Column(type="text")
+
      */
     private $description;
 
@@ -90,6 +92,7 @@ class Stage
 
         return $this;
     }
+
 
     /**
      * @return Collection|Formation[]
